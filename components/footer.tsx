@@ -38,7 +38,7 @@ export function Footer() {
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <span className="font-serif text-2xl font-bold tracking-tight text-foreground">
-                LUXE
+                HMA-Store
               </span>
               <Sparkles className="h-4 w-4 text-accent" />
             </Link>
@@ -127,7 +127,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} LUXE. All rights reserved.
+            &copy; {new Date().getFullYear()} HMA-Store. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
