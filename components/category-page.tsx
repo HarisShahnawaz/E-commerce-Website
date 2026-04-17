@@ -121,7 +121,7 @@ export function CategoryPage({ title, description, products }: CategoryPageProps
                     Filters
                   </Button>
                 </SheetTrigger>
-                <SheetContent side="left" className="w-[300px] overflow-y-auto">
+                <SheetContent side="left" className="w-75 overflow-y-auto">
                   <h2 className="font-semibold text-lg text-foreground mb-6">Filters</h2>
                   <FilterContent />
                 </SheetContent>
@@ -135,7 +135,7 @@ export function CategoryPage({ title, description, products }: CategoryPageProps
             <div className="flex items-center gap-4">
               {/* Sort */}
               <Select defaultValue="featured">
-                <SelectTrigger className="w-[180px]">
+                <SelectTrigger className="w-45">
                   <SelectValue placeholder="Sort by" />
                 </SelectTrigger>
                 <SelectContent>

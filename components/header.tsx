@@ -18,7 +18,7 @@ export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           {/* Mobile Menu */}
@@ -29,7 +29,7 @@ export function Header() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-[300px] sm:w-[400px]">
+            <SheetContent side="left" className="w-75 sm:w-100">
               <nav className="flex flex-col gap-4 mt-8">
                 {navigation.map((item) => (
                   <Link
@@ -75,7 +75,7 @@ export function Header() {
                     <input
                       type="text"
                       placeholder="Ask AI to find your style..."
-                      className="w-[200px] md:w-[300px] h-9 rounded-full border border-border bg-card px-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+                      className="w-50 md:w-75 h-9 rounded-full border border-border bg-card px-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
                       autoFocus
                     />
                     <Sparkles className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-accent" />
