@@ -127,9 +127,9 @@ export function CategoryPage({ title, description, products }: CategoryPageProps
                 </SheetContent>
               </Sheet>
 
-              <span className="text-sm text-muted-foreground">
-                {products.length} products
-              </span>
+              <span className="hidden sm:inline text-sm text-muted-foreground">
+  {products?.length || 0} {products?.length === 1 ? "product" : "products"}
+</span>
             </div>
 
             <div className="flex items-center gap-4">
