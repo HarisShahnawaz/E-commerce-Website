@@ -13,9 +13,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'LUXE - AI-Powered Fashion',
+  title: 'HMA-Store - AI-Powered Fashion',
   description: 'Discover the future of fashion with AI-powered personalized shopping for Men, Women, and Children',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
