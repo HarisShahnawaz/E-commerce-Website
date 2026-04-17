@@ -5,7 +5,7 @@ const featuredProducts: Product[] = [
   {
     id: "1",
     name: "Tailored Wool Blazer",
-    price: 289,
+    price: 300,
     image: "/images/products/blazer.jpg",
     category: "Men",
     aiRecommended: true,

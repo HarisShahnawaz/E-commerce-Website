@@ -15,7 +15,7 @@ const categories = [
     description: "Elegant pieces that define your style",
     href: "/women",
     image: "/images/women-category.jpg",
-    products: "3,200+ Products"
+    products: "3,000+ Products"
   },
   {
     name: "Children",
