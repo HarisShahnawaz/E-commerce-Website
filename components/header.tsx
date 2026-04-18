@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Search, ShoppingBag, User, Menu, X, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
@@ -16,11 +16,25 @@ const navigation = [
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const searchRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setIsSearchOpen(false)
+      }
+    }
+    if (isSearchOpen) {
+      document.addEventListener("mousedown", handleClickOutside)
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [isSearchOpen])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
+
           {/* Mobile Menu */}
           <Sheet>
             <SheetTrigger asChild className="lg:hidden">
@@ -29,18 +43,79 @@ export function Header() {
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="left" className="w-75 sm:w-100">
-              <nav className="flex flex-col gap-4 mt-8">
-                {navigation.map((item) => (
+            <SheetContent side="left" className="w-70 sm:w-[320px] p-0">
+
+              {/* Mobile Menu Header */}
+              <div className="bg-gray-900 px-6 py-8">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="font-serif text-2xl font-bold text-white">HMA-Store</span>
+                  <Sparkles className="h-4 w-4 text-yellow-400" />
+                </div>
+                <p className="text-gray-400 text-xs tracking-widest uppercase">AI-Powered Fashion</p>
+              </div>
+
+              {/* Navigation Links */}
+              <div className="px-4 py-6">
+                <p className="text-xs text-gray-400 uppercase tracking-widest px-3 mb-3">Browse</p>
+                <nav className="flex flex-col gap-1">
+                  {navigation.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="flex items-center justify-between px-3 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-gray-100 transition-colors group"
+                    >
+                      <span>{item.name}</span>
+                      <span className="text-gray-300 group-hover:text-gray-600 transition-colors">→</span>
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* Divider */}
+                <div className="border-t border-gray-100 my-4" />
+
+                {/* Account */}
+                <p className="text-xs text-gray-400 uppercase tracking-widest px-3 mb-3">Account</p>
+                <div className="flex flex-col gap-1">
                   <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-lg font-medium text-foreground hover:text-muted-foreground transition-colors"
+                    href="/login"
+                    className="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-gray-100 transition-colors group"
                   >
-                    {item.name}
+                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition">
+                      <User className="h-4 w-4 text-gray-600" />
+                    </div>
+                    Login
                   </Link>
-                ))}
-              </nav>
+                  <Link
+                    href="/signup"
+                    className="flex items-center gap-3 px-3 py-3 rounded-xl text-base font-medium text-gray-800 hover:bg-gray-100 transition-colors group"
+                  >
+                    <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center group-hover:bg-gray-200 transition">
+                      <Sparkles className="h-4 w-4 text-gray-600" />
+                    </div>
+                    Sign Up
+                  </Link>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-gray-100 my-4" />
+
+                {/* Cart shortcut */}
+                <Link
+                  href="/cart"
+                  className="flex items-center gap-3 px-3 py-3 rounded-xl bg-gray-900 text-white hover:bg-black transition-colors"
+                >
+                  <ShoppingBag className="h-4 w-4" />
+                  <span className="text-sm font-medium">View Cart</span>
+                  <span className="ml-auto bg-white text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </Link>
+
+              </div>
+
+              {/* Bottom */}
+              <div className="absolute bottom-0 left-0 right-0 px-6 py-4 border-t border-gray-100 bg-gray-50">
+                <p className="text-xs text-gray-400 text-center">© 2026 HMA-Store. All rights reserved.</p>
+              </div>
+
             </SheetContent>
           </Sheet>
 
@@ -67,27 +142,22 @@ export function Header() {
 
           {/* Right Actions */}
           <div className="flex items-center gap-2">
-            {/* AI Search */}
-            <div className="relative">
+
+            {/* Search — inline small */}
+            <div className="flex items-center" ref={searchRef}>
               {isSearchOpen ? (
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center">
-                  <div className="relative">
-                    <input
-                      type="text"
-                      placeholder="Ask AI to find your style..."
-                      className="w-50 md:w-75 h-9 rounded-full border border-border bg-card px-4 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
-                      autoFocus
-                    />
-                    <Sparkles className="absolute right-3 top-1/2 -translate-y-1/2 h-4 w-4 text-accent" />
-                  </div>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="ml-2"
-                    onClick={() => setIsSearchOpen(false)}
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
+                <div className="flex items-center gap-1.5 border border-gray-200 rounded-full px-3 py-1.5 bg-white">
+                  <Search className="h-3.5 w-3.5 text-gray-400 shrink-0" />
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    className="w-24 sm:w-32 text-xs text-gray-800 placeholder-gray-400 focus:outline-none bg-transparent"
+                    autoFocus
+                  />
+                  <Sparkles className="h-3.5 w-3.5 text-accent shrink-0" />
+                  <button onClick={() => setIsSearchOpen(false)} className="ml-1">
+                    <X className="h-3.5 w-3.5 text-gray-400 hover:text-gray-600" />
+                  </button>
                 </div>
               ) : (
                 <Button
@@ -101,18 +171,44 @@ export function Header() {
               )}
             </div>
 
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-              <span className="sr-only">Account</span>
-            </Button>
+            {/* Account Dropdown */}
+            <div className="relative group">
+              <Button variant="ghost" size="icon">
+                <User className="h-5 w-5" />
+                <span className="sr-only">Account</span>
+              </Button>
+              <div className="absolute right-0 top-full mt-2 w-40 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link
+                    href="/login"
+                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    <User className="h-4 w-4 text-gray-400" />
+                    Login
+                  </Link>
+                  <div className="mx-3 border-t border-gray-100" />
+                  <Link
+                    href="/signup"
+                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                  >
+                    <Sparkles className="h-4 w-4 text-gray-400" />
+                    Sign Up
+                  </Link>
+                </div>
+              </div>
+            </div>
 
-            <Button variant="ghost" size="icon" className="relative">
-              <ShoppingBag className="h-5 w-5" />
-              <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-[10px] font-medium text-accent-foreground flex items-center justify-center">
-                3
-              </span>
-              <span className="sr-only">Cart</span>
-            </Button>
+            {/* Cart */}
+            <Link href="/cart">
+              <Button variant="ghost" size="icon" className="relative">
+                <ShoppingBag className="h-5 w-5" />
+                <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-[10px] font-medium text-accent-foreground flex items-center justify-center">
+                  3
+                </span>
+                <span className="sr-only">Cart</span>
+              </Button>
+            </Link>
+
           </div>
         </div>
       </div>
