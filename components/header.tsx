@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import { Search, ShoppingBag, User, Menu, X, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
 
 const navigation = [
   { name: "Men", href: "/men" },
@@ -16,19 +16,22 @@ const navigation = [
 
 export function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [isAccountOpen, setIsAccountOpen] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
+  const accountRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     function handleClickOutside(e: MouseEvent) {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
         setIsSearchOpen(false)
       }
+      if (accountRef.current && !accountRef.current.contains(e.target as Node)) {
+        setIsAccountOpen(false)
+      }
     }
-    if (isSearchOpen) {
-      document.addEventListener("mousedown", handleClickOutside)
-    }
+    document.addEventListener("mousedown", handleClickOutside)
     return () => document.removeEventListener("mousedown", handleClickOutside)
-  }, [isSearchOpen])
+  }, [])
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/60">
@@ -44,6 +47,7 @@ export function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-70 sm:w-[320px] p-0">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
 
               {/* Mobile Menu Header */}
               <div className="bg-gray-900 px-6 py-8">
@@ -70,10 +74,8 @@ export function Header() {
                   ))}
                 </nav>
 
-                {/* Divider */}
                 <div className="border-t border-gray-100 my-4" />
 
-                {/* Account */}
                 <p className="text-xs text-gray-400 uppercase tracking-widest px-3 mb-3">Account</p>
                 <div className="flex flex-col gap-1">
                   <Link
@@ -96,10 +98,8 @@ export function Header() {
                   </Link>
                 </div>
 
-                {/* Divider */}
                 <div className="border-t border-gray-100 my-4" />
 
-                {/* Cart shortcut */}
                 <Link
                   href="/cart"
                   className="flex items-center gap-3 px-3 py-3 rounded-xl bg-gray-900 text-white hover:bg-black transition-colors"
@@ -111,7 +111,6 @@ export function Header() {
 
               </div>
 
-              {/* Bottom */}
               <div className="absolute bottom-0 left-0 right-0 px-6 py-4 border-t border-gray-100 bg-gray-50">
                 <p className="text-xs text-gray-400 text-center">© 2026 HMA-Store. All rights reserved.</p>
               </div>
@@ -143,7 +142,7 @@ export function Header() {
           {/* Right Actions */}
           <div className="flex items-center gap-2">
 
-            {/* Search — inline small */}
+            {/* Search */}
             <div className="flex items-center" ref={searchRef}>
               {isSearchOpen ? (
                 <div className="flex items-center gap-1.5 border border-gray-200 rounded-full px-3 py-1.5 bg-white">
@@ -160,42 +159,47 @@ export function Header() {
                   </button>
                 </div>
               ) : (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  onClick={() => setIsSearchOpen(true)}
-                >
+                <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
                   <Search className="h-5 w-5" />
                   <span className="sr-only">Search</span>
                 </Button>
               )}
             </div>
 
-            {/* Account Dropdown */}
-            <div className="relative group">
-              <Button variant="ghost" size="icon">
+            {/* Account Dropdown — click based, works on mobile */}
+            <div className="relative" ref={accountRef}>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsAccountOpen(!isAccountOpen)}
+              >
                 <User className="h-5 w-5" />
                 <span className="sr-only">Account</span>
               </Button>
-              <div className="absolute right-0 top-full mt-2 w-40 bg-white border border-gray-100 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div className="py-2">
-                  <Link
-                    href="/login"
-                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    <User className="h-4 w-4 text-gray-400" />
-                    Login
-                  </Link>
-                  <div className="mx-3 border-t border-gray-100" />
-                  <Link
-                    href="/signup"
-                    className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
-                  >
-                    <Sparkles className="h-4 w-4 text-gray-400" />
-                    Sign Up
-                  </Link>
+
+              {isAccountOpen && (
+                <div className="absolute right-0 top-full mt-2 w-40 bg-white border border-gray-100 rounded-xl shadow-lg z-50">
+                  <div className="py-2">
+                    <Link
+                      href="/login"
+                      onClick={() => setIsAccountOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                    >
+                      <User className="h-4 w-4 text-gray-400" />
+                      Login
+                    </Link>
+                    <div className="mx-3 border-t border-gray-100" />
+                    <Link
+                      href="/signup"
+                      onClick={() => setIsAccountOpen(false)}
+                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                    >
+                      <Sparkles className="h-4 w-4 text-gray-400" />
+                      Sign Up
+                    </Link>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
 
             {/* Cart */}
