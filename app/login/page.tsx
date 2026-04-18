@@ -4,106 +4,64 @@ import Link from "next/link"
 
 export default function LoginPage() {
   return (
-    <div style={{ backgroundColor: "#f5f3ef", minHeight: "100vh", width: "100%", overflowY: "auto", padding: "2rem 1rem", boxSizing: "border-box" }}>
-      <div style={{
-        backgroundColor: "white",
-        border: "1px solid #e5e7eb",
-        borderRadius: "1rem",
-        padding: "2rem",
-        width: "100%",
-        maxWidth: "420px",
-        margin: "0 auto",
-        boxSizing: "border-box"
-      }}>
-
+    <div className="bg-[#f5f3ef] min-h-screen w-full p-4 sm:p-6 lg:p-8 box-border">
+      <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 lg:p-8 w-full max-w-md mx-auto box-border">
+        
         {/* Header */}
-        <div style={{ textAlign: "center", marginBottom: "1.5rem" }}>
-          <p style={{ fontSize: "11px", color: "#9ca3af", letterSpacing: "0.15em", textTransform: "uppercase", marginBottom: "6px", margin: "0 0 6px" }}>HMA-Store</p>
-          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.5rem, 5vw, 2rem)", fontWeight: "700", color: "#111827", margin: "0 0 6px" }}>
+        <div className="text-center mb-6 sm:mb-8">
+          <p className="text-xs uppercase tracking-widest text-gray-400 mb-1.5">HMA-Store</p>
+          <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1.5 leading-tight">
             Welcome back
           </h1>
-          <p style={{ fontSize: "14px", color: "#6b7280", margin: 0 }}>Sign in to your account</p>
+          <p className="text-sm sm:text-base text-gray-600">Sign in to your account</p>
         </div>
 
         {/* Form */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+        <form className="flex flex-col gap-4 sm:gap-5">
           <div>
-            <label style={{ fontSize: "13px", color: "#4b5563", display: "block", marginBottom: "6px" }}>Email address</label>
+            <label className="block text-xs sm:text-sm text-gray-700 mb-1.5 font-medium">Email address</label>
             <input
               type="email"
               placeholder="you@example.com"
-              style={{
-                width: "100%",
-                border: "1px solid #d1d5db",
-                borderRadius: "8px",
-                padding: "10px 12px",
-                fontSize: "14px",
-                backgroundColor: "#fafaf9",
-                boxSizing: "border-box",
-                outline: "none"
-              }}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
             />
           </div>
+          
           <div>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "6px" }}>
-              <label style={{ fontSize: "13px", color: "#4b5563" }}>Password</label>
-              <Link href="#" style={{ fontSize: "12px", color: "#6b7280", textDecoration: "none" }}>Forgot password?</Link>
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-1.5 gap-2 sm:gap-0">
+              <label className="text-xs sm:text-sm text-gray-700 font-medium">Password</label>
+              <Link 
+                href="#" 
+                className="text-xs text-gray-500 hover:text-gray-700 font-medium transition-colors"
+              >
+                Forgot password?
+              </Link>
             </div>
             <input
               type="password"
               placeholder="••••••••"
-              style={{
-                width: "100%",
-                border: "1px solid #d1d5db",
-                borderRadius: "8px",
-                padding: "10px 12px",
-                fontSize: "14px",
-                backgroundColor: "#fafaf9",
-                boxSizing: "border-box",
-                outline: "none"
-              }}
+              className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
             />
           </div>
-          <button style={{
-            width: "100%",
-            backgroundColor: "#111827",
-            color: "white",
-            padding: "11px",
-            borderRadius: "8px",
-            fontSize: "14px",
-            fontWeight: "500",
-            border: "none",
-            cursor: "pointer"
-          }}>
+          
+          <button className="w-full bg-gray-900 text-white py-3.5 sm:py-4 rounded-lg text-sm sm:text-base font-medium hover:bg-gray-800 active:bg-gray-900 transition-all duration-200 shadow-sm">
             Sign in
           </button>
-        </div>
+        </form>
 
         {/* Divider */}
-        <div style={{ position: "relative", margin: "1.25rem 0", textAlign: "center" }}>
-          <div style={{ position: "absolute", top: "50%", width: "100%", borderTop: "1px solid #e5e7eb" }} />
-          <span style={{ position: "relative", backgroundColor: "white", padding: "0 10px", fontSize: "12px", color: "#9ca3af" }}>
+        <div className="relative my-6 sm:my-8 text-center">
+          <div className="absolute inset-0 flex items-center">
+            <div className="w-full border-t border-gray-200" />
+          </div>
+          <span className="relative bg-white px-4 text-xs text-gray-400">
             or continue with
           </span>
         </div>
 
         {/* Google Button */}
-        <button style={{
-          width: "100%",
-          border: "1px solid #d1d5db",
-          borderRadius: "8px",
-          padding: "10px",
-          fontSize: "14px",
-          color: "#374151",
-          backgroundColor: "white",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "8px",
-          cursor: "pointer",
-          boxSizing: "border-box"
-        }}>
-          <svg width="16" height="16" viewBox="0 0 48 48">
+        <button className="w-full border border-gray-300 rounded-lg px-4 py-3 text-sm text-gray-700 bg-white hover:bg-gray-50 active:bg-gray-100 flex items-center justify-center gap-3 transition-all duration-200 shadow-sm">
+          <svg width="18" height="18" viewBox="0 0 48 48" className="flex-shrink-0">
             <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
             <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
             <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
@@ -112,13 +70,16 @@ export default function LoginPage() {
           Continue with Google
         </button>
 
-        <p style={{ textAlign: "center", fontSize: "13px", color: "#6b7280", marginTop: "1.25rem", marginBottom: 0 }}>
+        {/* Sign up link */}
+        <p className="text-center text-xs sm:text-sm text-gray-600 mt-6 sm:mt-8 mb-0">
           Don't have an account?{" "}
-          <Link href="/signup" style={{ color: "#111827", fontWeight: "600", textDecoration: "none" }}>
+          <Link 
+            href="/signup" 
+            className="text-gray-900 font-semibold hover:text-gray-800 transition-colors"
+          >
             Sign up
           </Link>
         </p>
-
       </div>
     </div>
   )
