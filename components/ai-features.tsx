@@ -27,7 +27,7 @@ export function AIFeatures() {
   return (
     <section className="py-20 px-4">
       <div className="container mx-auto">
-        {/* Section Header */}
+        {/* Section of Header  */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-card border border-border mb-6">
             <Sparkles className="h-4 w-4 text-accent" />
