@@ -37,7 +37,7 @@ export function Hero() {
             </Link>
           </Button>
           <Button variant="outline" size="lg" className="rounded-full px-8 h-12 text-base" asChild>
-            <Link href="/ai-stylist">
+            <Link href="/men">
               <Sparkles className="mr-2 h-4 w-4" />
               Try AI Stylist
             </Link>
