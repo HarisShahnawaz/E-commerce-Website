@@ -46,10 +46,10 @@ export function Categories() {
             <Link
               key={category.name}
               href={category.href}
-              className="group relative aspect-[3/4] overflow-hidden rounded-xl bg-muted"
+              className="group relative aspect-3/4 overflow-hidden rounded-xl bg-muted"
             >
               {/* Image */}
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-t from-foreground/80 via-foreground/20 to-transparent z-10" />
               <Image
                 src={category.image}
                 alt={category.name}

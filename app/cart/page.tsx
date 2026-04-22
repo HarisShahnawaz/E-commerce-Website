@@ -242,23 +242,23 @@ export default function CartPage() {
                       Coupon Code
                     </label>
                     <div className="flex gap-2">
-                      <div className="flex-1 flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2 bg-[#fafaf9]">
-                        <Tag className="h-3.5 w-3.5 text-gray-400 shrink-0" />
-                        <input
-                          type="text"
-                          value={coupon}
-                          onChange={(e) => setCoupon(e.target.value)}
-                          placeholder="Enter code"
-                          className="flex-1 text-sm focus:outline-none bg-transparent text-gray-800 placeholder-gray-400"
-                        />
-                      </div>
-                      <button
-                        onClick={applyCoupon}
-                        className="bg-gray-900 text-white px-4 rounded-lg text-sm font-medium hover:bg-black transition"
-                      >
-                        Apply
-                      </button>
-                    </div>
+  <div className="flex-1 min-w-0 flex items-center gap-2 border border-gray-200 rounded-lg px-3 py-2 bg-[#fafaf9]">
+    <Tag className="h-3.5 w-3.5 text-gray-400 shrink-0" />
+    <input
+      type="text"
+      value={coupon}
+      onChange={(e) => setCoupon(e.target.value)}
+      placeholder="Enter code"
+      className="w-full text-sm focus:outline-none bg-transparent text-gray-800 placeholder-gray-400"
+    />
+  </div>
+  <button
+    onClick={applyCoupon}
+    className="shrink-0 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm font-medium hover:bg-black transition whitespace-nowrap"
+  >
+    Apply
+  </button>
+</div>
                     {couponApplied && (
                       <p className="text-xs text-green-600 mt-1.5">✓ Coupon applied! 10% off</p>
                     )}

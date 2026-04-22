@@ -5,6 +5,7 @@ import { FeaturedProducts } from "@/components/featured-products"
 import { AIFeatures } from "@/components/ai-features"
 import { Newsletter } from "@/components/newsletter"
 import { Footer } from "@/components/footer"
+import AboutPage from "./about/page"
 
 export default function Home() {
   return (
