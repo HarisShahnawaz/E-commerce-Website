@@ -6,6 +6,9 @@ import { AIFeatures } from "@/components/ai-features"
 import { Newsletter } from "@/components/newsletter"
 import { Footer } from "@/components/footer"
 import AboutPage from "./about/page"
+import About from "@/components/about"
+import { Contact } from "lucide-react"
+import ContactUS from "@/components/contact"
 
 export default function Home() {
   return (
@@ -14,6 +17,8 @@ export default function Home() {
       <Hero />
       <Categories />
       <FeaturedProducts />
+       <About/>
+       <ContactUS/>
       <AIFeatures />
       <Newsletter />
       <Footer />
