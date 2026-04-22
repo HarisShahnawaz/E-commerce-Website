@@ -127,7 +127,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} HMA-Store. All rights reserved.
+            &copy; {new Date().getFullYear()} HMA-Store. By Haris Shahnawaz All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <Link href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
