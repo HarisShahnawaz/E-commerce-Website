@@ -29,7 +29,7 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <div className="group relative">
       {/* Image Container */}
-      <div className="relative aspect-[3/4] overflow-hidden rounded-lg bg-muted mb-4">
+      <div className="relative aspect-3/4 overflow-hidden rounded-lg bg-muted mb-4">
         <Link href={`/product/${product.id}`}>
           <Image
             src={product.image}

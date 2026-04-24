@@ -7,7 +7,7 @@ const childrenProducts: Product[] = [
   {
     id: "c1",
     name: "Kids Denim Jacket",
-    price: 85,
+    price: 99,
     image: "/images/products/kids/jacket.jpg",
     category: "Outerwear",
     isNew: true,
