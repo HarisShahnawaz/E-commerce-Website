@@ -19,7 +19,7 @@ const childrenProducts: Product[] = [
   { id: "c10", name: "Jogger Pants", price: 42, image: "/images/products/kids/joggers.jpg", category: "Bottoms" },
   { id: "c11", name: "Raincoat", price: 75, image: "/images/products/kids/raincoat.jpg", category: "Outerwear", isNew: true },
   { id: "c12", name: "Beanie Hat", price: 25, image: "/images/products/kids/beanie.jpg", category: "Accessories" },
-  { id: "c13", name: "Brown Jacket", price: 105, image: "/images/products/kids/brown-jacket.jpg", category: "Outerwear", isNew: true },
+  { id: "c13", name: "Brown Jacket", price: 100, image: "/images/products/kids/brown-jacket.jpg", category: "Outerwear", isNew: true },
   { id: "c14", name: "Dress", price: 55, image: "/images/products/kids/kid-frauk.jpg", category: "Tops", aiRecommended: true },
   { id: "c15", name: "Kids Hoodie", price: 60, originalPrice: 75, image: "/images/products/kids/kid-hoodie.jpg", category: "Tops", isSale: true },
   { id: "c16", name: "Casual Shoes", price: 50, image: "/images/products/kids/kid-shoes.jpg", category: "Accessories", isNew: true },
