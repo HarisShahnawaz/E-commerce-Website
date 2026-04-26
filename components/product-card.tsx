@@ -6,6 +6,7 @@ import { Heart, ShoppingBag, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { useState } from "react"
+import { useCart } from "@/lib/cart-context"
 
 export interface Product {
   id: string
@@ -25,6 +26,14 @@ interface ProductCardProps {
 
 export function ProductCard({ product }: ProductCardProps) {
   const [isWishlisted, setIsWishlisted] = useState(false)
+  const [added, setAdded] = useState(false)
+  const { addToCart } = useCart()
+
+  const handleAddToCart = () => {
+    addToCart(product)
+    setAdded(true)
+    setTimeout(() => setAdded(false), 1500)
+  }
 
   return (
     <div className="group relative">
@@ -55,7 +64,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Quick Actions */}
+        {/* Wishlist */}
         <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
           <Button
             variant="secondary"
@@ -70,9 +79,13 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Add to Cart */}
         <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Button className="w-full rounded-full" size="sm">
+          <Button
+            className="w-full rounded-full"
+            size="sm"
+            onClick={handleAddToCart}
+          >
             <ShoppingBag className="h-4 w-4 mr-2" />
-            Add to Cart
+            {added ? "Added! ✓" : "Add to Cart"}
           </Button>
         </div>
       </div>
@@ -86,14 +99,14 @@ export function ProductCard({ product }: ProductCardProps) {
         </Link>
         <p className="text-sm text-muted-foreground mt-1">{product.category}</p>
         <div className="flex items-center gap-2 mt-2">
-          <span className="font-semibold text-foreground">
-            ${product.price.toFixed(2)}
+         <span className="font-semibold text-foreground">
+         Rs {product.price.toLocaleString()}
           </span>
-          {product.originalPrice && (
-            <span className="text-sm text-muted-foreground line-through">
-              ${product.originalPrice.toFixed(2)}
-            </span>
-          )}
+             {product.originalPrice && (
+           <span className="text-sm text-muted-foreground line-through">
+              Rs {product.originalPrice.toLocaleString()}
+           </span>
+               )}
         </div>
       </div>
     </div>

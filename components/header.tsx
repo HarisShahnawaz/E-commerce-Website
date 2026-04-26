@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from "react"
 import { Search, ShoppingBag, User, Menu, X, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet"
+import { useCart } from "@/lib/cart-context"
 
 const navigation = [
   { name: "Men", href: "/men" },
@@ -15,6 +16,7 @@ const navigation = [
 ]
 
 export function Header() {
+  const { totalItems } = useCart()
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const [isAccountOpen, setIsAccountOpen] = useState(false)
   const searchRef = useRef<HTMLDivElement>(null)
@@ -100,13 +102,16 @@ export function Header() {
 
                 <div className="border-t border-gray-100 my-4" />
 
+                {/* Mobile Cart — live count */}
                 <Link
                   href="/cart"
                   className="flex items-center gap-3 px-3 py-3 rounded-xl bg-gray-900 text-white hover:bg-black transition-colors"
                 >
                   <ShoppingBag className="h-4 w-4" />
                   <span className="text-sm font-medium">View Cart</span>
-                  <span className="ml-auto bg-white text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                  <span className="ml-auto bg-white text-gray-900 text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                    {totalItems}
+                  </span>
                 </Link>
 
               </div>
@@ -166,7 +171,7 @@ export function Header() {
               )}
             </div>
 
-            {/* Account Dropdown — click based, works on mobile */}
+            {/* Account Dropdown */}
             <div className="relative" ref={accountRef}>
               <Button
                 variant="ghost"
@@ -178,23 +183,30 @@ export function Header() {
               </Button>
 
               {isAccountOpen && (
-                <div className="absolute right-0 top-full mt-2 w-40 bg-white border border-gray-100 rounded-xl shadow-lg z-50">
+                <div className="absolute right-0 top-full mt-2 w-44 bg-white border border-gray-100 rounded-xl shadow-lg z-100 overflow-hidden">
+                  <div className="bg-gray-900 px-4 py-3">
+                    <p className="text-xs text-white uppercase tracking-widest font-medium">My Account</p>
+                  </div>
                   <div className="py-2">
                     <Link
                       href="/login"
                       onClick={() => setIsAccountOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                     >
-                      <User className="h-4 w-4 text-gray-400" />
+                      <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                        <User className="h-3.5 w-3.5 text-gray-600" />
+                      </div>
                       Login
                     </Link>
                     <div className="mx-3 border-t border-gray-100" />
                     <Link
                       href="/signup"
                       onClick={() => setIsAccountOpen(false)}
-                      className="flex items-center gap-2 px-4 py-2.5 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                      className="flex items-center gap-3 px-4 py-3 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
                     >
-                      <Sparkles className="h-4 w-4 text-gray-400" />
+                      <div className="w-7 h-7 rounded-full bg-gray-100 flex items-center justify-center shrink-0">
+                        <Sparkles className="h-3.5 w-3.5 text-gray-600" />
+                      </div>
                       Sign Up
                     </Link>
                   </div>
@@ -202,13 +214,15 @@ export function Header() {
               )}
             </div>
 
-            {/* Cart */}
+            {/* Cart — live count badge */}
             <Link href="/cart">
               <Button variant="ghost" size="icon" className="relative">
                 <ShoppingBag className="h-5 w-5" />
-                <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-[10px] font-medium text-accent-foreground flex items-center justify-center">
-                  3
-                </span>
+                {totalItems > 0 && (
+                  <span className="absolute -top-1 -right-1 h-4 w-4 rounded-full bg-accent text-[10px] font-medium text-accent-foreground flex items-center justify-center">
+                    {totalItems}
+                  </span>
+                )}
                 <span className="sr-only">Cart</span>
               </Button>
             </Link>
