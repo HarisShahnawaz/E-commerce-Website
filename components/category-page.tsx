@@ -21,7 +21,7 @@ const categoryFilters = ["All", "Tops", "Bottoms", "Dresses", "Outerwear", "Acce
 const sizes = ["XS", "S", "M", "L", "XL", "XXL"]
 
 export function CategoryPage({ title, description, products, hasMore, onLoadMore }: CategoryPageProps) {
-  const [priceRange, setPriceRange] = useState([0, 500])
+  const [priceRange, setPriceRange] = useState([0, 10000])
   const [gridCols, setGridCols] = useState<3 | 4>(4)
   const [selectedCategory, setSelectedCategory] = useState("All")
   const [selectedSizes, setSelectedSizes] = useState<string[]>([])
@@ -92,8 +92,8 @@ export function CategoryPage({ title, description, products, hasMore, onLoadMore
         <Slider
           value={priceRange}
           onValueChange={setPriceRange}
-          max={500}
-          step={10}
+          max={10000}
+          step={100}
           className="mb-4"
         />
         <div className="flex justify-between text-sm text-muted-foreground">
@@ -141,7 +141,7 @@ export function CategoryPage({ title, description, products, hasMore, onLoadMore
         className="w-full"
         onClick={() => {
           setSelectedCategory("All")
-          setPriceRange([0, 500])
+          setPriceRange([0, 10000])
           setSelectedSizes([])
           setAiOnly(false)
         }}
@@ -242,7 +242,7 @@ export function CategoryPage({ title, description, products, hasMore, onLoadMore
                 variant="outline"
                 onClick={() => {
                   setSelectedCategory("All")
-                  setPriceRange([0, 500])
+                  setPriceRange([0, 10000])
                   setSelectedSizes([])
                   setAiOnly(false)
                 }}

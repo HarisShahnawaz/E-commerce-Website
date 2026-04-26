@@ -64,30 +64,30 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
         </div>
 
-        {/* Wishlist */}
-        <div className="absolute top-3 right-3 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Button
-            variant="secondary"
-            size="icon"
-            className="h-9 w-9 rounded-full bg-card/90 backdrop-blur-sm hover:bg-card"
-            onClick={() => setIsWishlisted(!isWishlisted)}
-          >
-            <Heart className={`h-4 w-4 ${isWishlisted ? "fill-accent text-accent" : ""}`} />
-            <span className="sr-only">Add to wishlist</span>
-          </Button>
-        </div>
+        {/* Quick Actions — Wishlist */}
+<div className="absolute top-2 right-2 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+  <Button
+    variant="secondary"
+    size="icon"
+    className="h-7 w-7 rounded-full bg-card/90 backdrop-blur-sm hover:bg-card"
+    onClick={() => setIsWishlisted(!isWishlisted)}
+  >
+    <Heart className={`h-3 w-3 ${isWishlisted ? "fill-accent text-accent" : ""}`} />
+    <span className="sr-only">Add to wishlist</span>
+  </Button>
+</div>
 
-        {/* Add to Cart */}
-        <div className="absolute bottom-3 left-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-          <Button
-            className="w-full rounded-full"
-            size="sm"
-            onClick={handleAddToCart}
-          >
-            <ShoppingBag className="h-4 w-4 mr-2" />
-            {added ? "Added! ✓" : "Add to Cart"}
-          </Button>
-        </div>
+{/* Add to Cart — always visible on mobile, hover on desktop */}
+<div className="absolute bottom-2 left-2 right-2 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
+  <Button
+    className="w-full rounded-full text-xs py-1 h-8"
+    size="sm"
+    onClick={handleAddToCart}
+  >
+    <ShoppingBag className="h-3 w-3 mr-1" />
+    {added ? "✓ Added" : "Add to Cart"}
+  </Button>
+</div>
       </div>
 
       {/* Product Info */}

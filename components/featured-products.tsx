@@ -5,7 +5,7 @@ const featuredProducts: Product[] = [
   {
     id: "1",
     name: "Tailored Wool Blazer",
-    price: 300,
+    price: 5500,
     image: "/images/products/blazer.jpg",
     category: "Men",
     aiRecommended: true,
@@ -13,7 +13,7 @@ const featuredProducts: Product[] = [
   {
     id: "2",
     name: "Silk Midi Dress",
-    price: 195,
+    price: 3500,
     image: "/images/products/dress.jpg",
     category: "Women",
     isNew: true,
@@ -21,8 +21,8 @@ const featuredProducts: Product[] = [
   {
     id: "3",
     name: "Premium Cotton Tee",
-    price: 49,
-    originalPrice: 69,
+    price: 4900,
+    originalPrice: 6900,
     image: "/images/products/tee.jpg",
     category: "Men",
     isSale: true,
@@ -30,7 +30,7 @@ const featuredProducts: Product[] = [
   {
     id: "4",
     name: "Cashmere Sweater",
-    price: 225,
+    price: 4500,
     image: "/images/products/sweater.jpg",
     category: "Women",
     aiRecommended: true,
@@ -38,7 +38,7 @@ const featuredProducts: Product[] = [
   {
     id: "5",
     name: "Kids Denim Jacket",
-    price: 85,
+    price: 3500,
     image: "/images/products/kids-jacket.jpg",
     category: "Children",
     isNew: true,
@@ -46,8 +46,8 @@ const featuredProducts: Product[] = [
   {
     id: "6",
     name: "Leather Crossbody Bag",
-    price: 175,
-    originalPrice: 220,
+    price: 1500,
+    originalPrice: 2500,
     image: "/images/products/bag.jpg",
     category: "Women",
     isSale: true,
@@ -55,14 +55,14 @@ const featuredProducts: Product[] = [
   {
     id: "7",
     name: "Linen Shirt",
-    price: 95,
+    price: 3500,
     image: "/images/products/shirt.jpg",
     category: "Men",
   },
   {
     id: "8",
     name: "Kids Organic Cotton Set",
-    price: 65,
+    price: 6500,
     image: "/images/products/kids-set.jpg",
     category: "Children",
     aiRecommended: true,
@@ -70,7 +70,7 @@ const featuredProducts: Product[] = [
   {
   id: "9",
   name: "Black Hoodie",
-  price: 110,
+  price: 4000,
   image: "/images/products/men/black-hoodie.jpg",
   category: "Men",
   isNew: true,
@@ -78,7 +78,7 @@ const featuredProducts: Product[] = [
 {
   id: "10",
   name: "Silky Dress",
-  price: 205,
+  price: 3500,
   image: "/images/products/women/womensilkydress2.jpg",
   category: "Women",
   aiRecommended: true,
@@ -86,7 +86,7 @@ const featuredProducts: Product[] = [
 {
   id: "11",
   name: "Kids Brown Jacket",
-  price: 105,
+  price: 3000,
   image: "/images/products/kids/brown-jacket.jpg",
   category: "Children",
   isNew: true,
@@ -94,7 +94,7 @@ const featuredProducts: Product[] = [
 {
   id: "12",
   name: "Trouser Shirt Set",
-  price: 175,
+  price: 6500,
   image: "/images/products/men/trouser-shirtset.jpg",
   category: "Men",
   aiRecommended: true,
@@ -102,8 +102,8 @@ const featuredProducts: Product[] = [
 {
   id: "13",
   name: "Women Coat",
-  price: 315,
-  originalPrice: 370,
+  price: 3150,
+  originalPrice: 3700,
   image: "/images/products/women/womencoat2.jpg",
   category: "Women",
   isSale: true,
@@ -111,7 +111,7 @@ const featuredProducts: Product[] = [
 {
   id: "14",
   name: "Kids Hoodie",
-  price: 60,
+  price: 6500,
   image: "/images/products/kids/kid-hoodie.jpg",
   category: "Children",
   aiRecommended: true,
@@ -119,8 +119,8 @@ const featuredProducts: Product[] = [
 {
   id: "15",
   name: "Classic Polo",
-  price: 85,
-  originalPrice: 105,
+  price: 3500,
+  originalPrice: 4000,
   image: "/images/products/men/poloshirt.jpg",
   category: "Men",
   isSale: true,
@@ -128,7 +128,7 @@ const featuredProducts: Product[] = [
 {
   id: "16",
   name: "Women Dress",
-  price: 175,
+  price: 4400,
   image: "/images/products/women/womendress4.jpg",
   category: "Women",
   isNew: true,
