@@ -9,7 +9,7 @@ import type { Product } from "@/components/product-card"
 const womenProducts: Product[] = [
   { id: "w1", name: "Silk Midi Dress", price: 3500, image: "/images/products/women/dress.jpg", category: "Dresses", isNew: true },
   { id: "w2", name: "Cashmere Sweater", price: 4500, image: "/images/products/women/sweater.jpg", category: "Tops", aiRecommended: true },
-  { id: "w3", name: "Leather Crossbody Bag", price: 1500, originalPrice: 2500, image: "/images/products/women/bag.jpg", category: "Accessories", isSale: true },
+  { id: "w3", name: "Leather  Bag", price: 1500, originalPrice: 2500, image: "/images/products/women/bag.jpg", category: "Accessories", isSale: true },
   { id: "w4", name: "High-Waist Trousers", price: 3000, image: "/images/products/women/trousers.jpg", category: "Bottoms" },
   { id: "w5", name: "Satin Blouse", price: 4500, image: "/images/products/women/blouse.jpg", category: "Tops", aiRecommended: true },
   { id: "w6", name: "Wool Blend Coat", price: 2950, image: "/images/products/women/coat.jpg", category: "Outerwear", isNew: true },

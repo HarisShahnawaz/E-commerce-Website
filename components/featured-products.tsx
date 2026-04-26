@@ -45,7 +45,7 @@ const featuredProducts: Product[] = [
   },
   {
     id: "6",
-    name: "Leather Crossbody Bag",
+    name: "Leather Bag",
     price: 1500,
     originalPrice: 2500,
     image: "/images/products/bag.jpg",
@@ -61,7 +61,7 @@ const featuredProducts: Product[] = [
   },
   {
     id: "8",
-    name: "Kids Organic Cotton Set",
+    name: "Kids Cotton Set",
     price: 6500,
     image: "/images/products/kids-set.jpg",
     category: "Children",
