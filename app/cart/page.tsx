@@ -9,10 +9,10 @@ import { Footer } from "@/components/footer"
 import { useCart } from "@/lib/cart-context"
 
 const suggestedProducts = [
-  { id: "s1", name: "Linen Shirt", price: 95, image: "/images/products/men/shirt.jpg", category: "Men" },
-  { id: "s2", name: "Leather Crossbody Bag", price: 175, image: "/images/products/women/bag.jpg", category: "Women" },
-  { id: "s3", name: "Premium Cotton Tee", price: 49, image: "/images/products/men/tee.jpg", category: "Men" },
-  { id: "s4", name: "Kids Denim Jacket", price: 85, image: "/images/products/kids/jacket.jpg", category: "Children" },
+  { id: "s1", name: "Linen Shirt", price: 3500, image: "/images/products/men/shirt.jpg", category: "Men" },
+  { id: "s2", name: "Leather  Bag", price: 1500, image: "/images/products/women/bag.jpg", category: "Women" },
+  { id: "s3", name: "Premium Cotton Tee", price: 4900, image: "/images/products/men/tee.jpg", category: "Men" },
+  { id: "s4", name: "Kids Denim Jacket", price: 3500, image: "/images/products/kids/jacket.jpg", category: "Children" },
 ]
 
 export default function CartPage() {
