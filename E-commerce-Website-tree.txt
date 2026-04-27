@@ -1,0 +1,196 @@
+E-commerce-Website
+┣ app
+┃ ┣ about
+┃ ┃ ┗ page.tsx
+┃ ┣ cart
+┃ ┃ ┗ page.tsx
+┃ ┣ children
+┃ ┃ ┗ page.tsx
+┃ ┣ contact
+┃ ┃ ┗ page.tsx
+┃ ┣ login
+┃ ┃ ┗ page.tsx
+┃ ┣ men
+┃ ┃ ┗ page.tsx
+┃ ┣ signup
+┃ ┃ ┗ page.tsx
+┃ ┣ women
+┃ ┃ ┗ page.tsx
+┃ ┣ globals.css
+┃ ┣ layout.tsx
+┃ ┗ page.tsx
+┣ components
+┃ ┣ ui
+┃ ┃ ┣ accordion.tsx
+┃ ┃ ┣ alert-dialog.tsx
+┃ ┃ ┣ alert.tsx
+┃ ┃ ┣ aspect-ratio.tsx
+┃ ┃ ┣ avatar.tsx
+┃ ┃ ┣ badge.tsx
+┃ ┃ ┣ breadcrumb.tsx
+┃ ┃ ┣ button-group.tsx
+┃ ┃ ┣ button.tsx
+┃ ┃ ┣ calendar.tsx
+┃ ┃ ┣ card.tsx
+┃ ┃ ┣ carousel.tsx
+┃ ┃ ┣ chart.tsx
+┃ ┃ ┣ checkbox.tsx
+┃ ┃ ┣ collapsible.tsx
+┃ ┃ ┣ command.tsx
+┃ ┃ ┣ context-menu.tsx
+┃ ┃ ┣ dialog.tsx
+┃ ┃ ┣ drawer.tsx
+┃ ┃ ┣ dropdown-menu.tsx
+┃ ┃ ┣ empty.tsx
+┃ ┃ ┣ field.tsx
+┃ ┃ ┣ form.tsx
+┃ ┃ ┣ hover-card.tsx
+┃ ┃ ┣ input-group.tsx
+┃ ┃ ┣ input-otp.tsx
+┃ ┃ ┣ input.tsx
+┃ ┃ ┣ item.tsx
+┃ ┃ ┣ kbd.tsx
+┃ ┃ ┣ label.tsx
+┃ ┃ ┣ menubar.tsx
+┃ ┃ ┣ navigation-menu.tsx
+┃ ┃ ┣ pagination.tsx
+┃ ┃ ┣ popover.tsx
+┃ ┃ ┣ progress.tsx
+┃ ┃ ┣ radio-group.tsx
+┃ ┃ ┣ resizable.tsx
+┃ ┃ ┣ scroll-area.tsx
+┃ ┃ ┣ select.tsx
+┃ ┃ ┣ separator.tsx
+┃ ┃ ┣ sheet.tsx
+┃ ┃ ┣ sidebar.tsx
+┃ ┃ ┣ skeleton.tsx
+┃ ┃ ┣ slider.tsx
+┃ ┃ ┣ sonner.tsx
+┃ ┃ ┣ spinner.tsx
+┃ ┃ ┣ switch.tsx
+┃ ┃ ┣ table.tsx
+┃ ┃ ┣ tabs.tsx
+┃ ┃ ┣ textarea.tsx
+┃ ┃ ┣ toast.tsx
+┃ ┃ ┣ toaster.tsx
+┃ ┃ ┣ toggle-group.tsx
+┃ ┃ ┣ toggle.tsx
+┃ ┃ ┣ tooltip.tsx
+┃ ┃ ┣ use-mobile.tsx
+┃ ┃ ┗ use-toast.ts
+┃ ┣ about.tsx
+┃ ┣ ai-features.tsx
+┃ ┣ categories.tsx
+┃ ┣ category-page.tsx
+┃ ┣ contact.tsx
+┃ ┣ featured-products.tsx
+┃ ┣ footer.tsx
+┃ ┣ header.tsx
+┃ ┣ hero.tsx
+┃ ┣ newsletter.tsx
+┃ ┣ product-card.tsx
+┃ ┗ theme-provider.tsx
+┣ hooks
+┃ ┣ use-mobile.ts
+┃ ┗ use-toast.ts
+┣ lib
+┃ ┣ cart-context.tsx
+┃ ┗ utils.ts
+┣ public
+┃ ┣ images
+┃ ┃ ┣ products
+┃ ┃ ┃ ┣ kids
+┃ ┃ ┃ ┃ ┣ beanie.jpg
+┃ ┃ ┃ ┃ ┣ brown-jacket.jpg
+┃ ┃ ┃ ┃ ┣ cardigan.jpg
+┃ ┃ ┃ ┃ ┣ dress.jpg
+┃ ┃ ┃ ┃ ┣ hoodie.jpg
+┃ ┃ ┃ ┃ ┣ jacket.jpg
+┃ ┃ ┃ ┃ ┣ joggers.jpg
+┃ ┃ ┃ ┃ ┣ kid-frauk.jpg
+┃ ┃ ┃ ┃ ┣ kid-hoodie.jpg
+┃ ┃ ┃ ┃ ┣ kid-shoes.jpg
+┃ ┃ ┃ ┃ ┣ kid-trouser.jpg
+┃ ┃ ┃ ┃ ┣ kidset-2.jpg
+┃ ┃ ┃ ┃ ┣ kidset.jpg
+┃ ┃ ┃ ┃ ┣ kidshirt.jpg
+┃ ┃ ┃ ┃ ┣ leggings.jpg
+┃ ┃ ┃ ┃ ┣ puffer.jpg
+┃ ┃ ┃ ┃ ┣ raincoat.jpg
+┃ ┃ ┃ ┃ ┣ set.jpg
+┃ ┃ ┃ ┃ ┣ sneakers.jpg
+┃ ┃ ┃ ┃ ┗ tshirt.jpg
+┃ ┃ ┃ ┣ men
+┃ ┃ ┃ ┃ ┣ belt.jpg
+┃ ┃ ┃ ┃ ┣ black-hoodie.jpg
+┃ ┃ ┃ ┃ ┣ black-jacket.jpg
+┃ ┃ ┃ ┃ ┣ blazer.jpg
+┃ ┃ ┃ ┃ ┣ chinos.jpg
+┃ ┃ ┃ ┃ ┣ denim-jacket.jpg
+┃ ┃ ┃ ┃ ┣ hoodie.jpg
+┃ ┃ ┃ ┃ ┣ oxford.jpg
+┃ ┃ ┃ ┃ ┣ polo.jpg
+┃ ┃ ┃ ┃ ┣ polo2.jpg
+┃ ┃ ┃ ┃ ┣ poloshirt.jpg
+┃ ┃ ┃ ┃ ┣ scarf.jpg
+┃ ┃ ┃ ┃ ┣ shirt.jpg
+┃ ┃ ┃ ┃ ┣ sweater.jpg
+┃ ┃ ┃ ┃ ┣ tee.jpg
+┃ ┃ ┃ ┃ ┣ trouser-shirtset.jpg
+┃ ┃ ┃ ┃ ┣ trousers.jpg
+┃ ┃ ┃ ┃ ┣ trousershirt-2.jpg
+┃ ┃ ┃ ┃ ┣ trousershirt3.jpg
+┃ ┃ ┃ ┃ ┗ vest.jpg
+┃ ┃ ┃ ┣ women
+┃ ┃ ┃ ┃ ┣ bag.jpg
+┃ ┃ ┃ ┃ ┣ blouse.jpg
+┃ ┃ ┃ ┃ ┣ cardigan.jpg
+┃ ┃ ┃ ┃ ┣ coat.jpg
+┃ ┃ ┃ ┃ ┣ dress.jpg
+┃ ┃ ┃ ┃ ┣ ear-ring.jpg
+┃ ┃ ┃ ┃ ┣ earrings.jpg
+┃ ┃ ┃ ┃ ┣ jeans.jpg
+┃ ┃ ┃ ┃ ┣ kid-frauk.jpg
+┃ ┃ ┃ ┃ ┣ scarf.jpg
+┃ ┃ ┃ ┃ ┣ shawl.jpg
+┃ ┃ ┃ ┃ ┣ silky3.jpg
+┃ ┃ ┃ ┃ ┣ skirt.jpg
+┃ ┃ ┃ ┃ ┣ sweater.jpg
+┃ ┃ ┃ ┃ ┣ trousers.jpg
+┃ ┃ ┃ ┃ ┣ womenbag.jpg
+┃ ┃ ┃ ┃ ┣ womencoat2.jpg
+┃ ┃ ┃ ┃ ┣ womendress4.jpg
+┃ ┃ ┃ ┃ ┣ womensilkydress2.jpg
+┃ ┃ ┃ ┃ ┗ wrap-dress.jpg
+┃ ┃ ┃ ┣ bag.jpg
+┃ ┃ ┃ ┣ blazer.jpg
+┃ ┃ ┃ ┣ dress.jpg
+┃ ┃ ┃ ┣ kids-jacket.jpg
+┃ ┃ ┃ ┣ kids-set.jpg
+┃ ┃ ┃ ┣ shirt.jpg
+┃ ┃ ┃ ┣ sweater.jpg
+┃ ┃ ┃ ┗ tee.jpg
+┃ ┃ ┣ children-category.jpg
+┃ ┃ ┣ men-category.jpg
+┃ ┃ ┗ women-category.jpg
+┃ ┣ aboutimage.png
+┃ ┣ apple-icon.png
+┃ ┣ icon-dark-32x32.png
+┃ ┣ icon-light-32x32.png
+┃ ┣ icon.svg
+┃ ┣ placeholder-logo.png
+┃ ┣ placeholder-logo.svg
+┃ ┣ placeholder-user.jpg
+┃ ┣ placeholder.jpg
+┃ ┗ placeholder.svg
+┣ styles
+┃ ┗ globals.css
+┣ components.json
+┣ next-env.d.ts
+┣ next.config.mjs
+┣ package-lock.json
+┣ package.json
+┣ pnpm-lock.yaml
+┣ postcss.config.mjs
+┣ README.md
+┗ tsconfig.json
