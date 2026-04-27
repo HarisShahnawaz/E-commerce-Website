@@ -13,7 +13,7 @@ export default function LoginPage() {
           <h1 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-1.5 leading-tight">
             Welcome back
           </h1>
-          <p className="text-sm sm:text-base text-gray-600">Sign in to your account</p>
+          <p className="text-sm sm:text-base text-gray-600">Sign in to your Account</p>
         </div>
 
         {/* Form */}
