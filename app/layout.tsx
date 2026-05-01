@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     apple: '/apple-icon.png',
   },
 }
-
+// Note: The `suppressHydrationWarning` prop is added to both <html> and <body> to prevent hydration mismatch warnings due to dynamic content or styles that may differ between server and client rendering.
 export default function RootLayout({
   children,
 }: Readonly<{
